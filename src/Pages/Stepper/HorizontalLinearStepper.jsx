@@ -34,6 +34,13 @@ const customStepperStyles = {
     border: '2px solid #14a800',
     color: 'white',
   },
+  '& .MuiStepIcon-root.Mui-completed': {
+    border: '0px solid #14a800',
+    color: '#14a800',
+  },
+  '& .MuiStepLabel-label.Mui-completed': {
+    color: '#14a800',
+  },
   '& .MuiStepIcon-text': {
     fill: '#000'
   },
