@@ -4,13 +4,41 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Skills from '../Steps/Skills/Skills'; // Import the Skills component
+import Skills from '../Steps/Skills/Skills';
 import { Container } from '@mui/material';
 
-// Define custom CSS for the active step
 const customStepLabelStyles = {
   '& .MuiStepLabel-active': {
-    color: 'green', // Change the text color to green for the active step
+    color: 'green',
+  },
+};
+
+// const customStepConnectorStyles = {
+//   display: 'none',
+// };
+
+const customStepperStyles = {
+  '& .MuiStepConnector-line': {
+    // border: '2px solid #14a800', // Modify line styles
+    borderRadius: '100%',
+    marginTop: '6px'
+  },
+  '& .MuiStepIcon-root': {
+    color: '#EAEFF3',
+    border: '2px solid #E1E5E9',
+    borderRadius: '100%',
+    width: '41px',
+    height: '41px',
+},
+  '& .MuiStepIcon-root.Mui-active': {
+    border: '2px solid #14a800',
+    color: 'white',
+  },
+  '& .MuiStepIcon-text': {
+    fill: '#000'
+  },
+  '& .MuiStepLabel-label.Mui-active': {
+    color: '#14a800',
   },
 };
 
@@ -18,7 +46,7 @@ export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
-  const steps = ['Skills', 'Education', 'Address', 'Digital Presence']; // Include Skills as the first step
+  const steps = ['Skills', 'Education', 'Address', 'Digital Presence'];
 
   const isStepSkipped = (step) => {
     return skipped.has(step);
@@ -49,7 +77,6 @@ export default function HorizontalLinearStepper() {
         return <Skills />;
       case 3:
         return <Skills />;
-      // Add cases for other steps and their respective components here
       default:
         return 'Step not found';
     }
@@ -58,12 +85,15 @@ export default function HorizontalLinearStepper() {
   return (
     <Container className='stepper-margin'>
       <Box sx={{ width: '100%' }}>
-        <Stepper activeStep={activeStep} alternativeLabel>
+        <Stepper
+          activeStep={activeStep}
+          alternativeLabel
+          sx={customStepperStyles}
+        >
           {steps.map((label, index) => {
             const stepProps = {};
             const labelProps = {};
 
-            // Add a custom style for the active step
             if (activeStep === index) {
               labelProps.style = customStepLabelStyles;
             }
