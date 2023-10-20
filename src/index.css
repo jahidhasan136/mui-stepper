@@ -26,7 +26,7 @@ a {
 }
 .css-ascpo7-MuiStepLabel-root{
   display: grid!important;
-  gap: 8px;
+  /* gap: 8px; */
 }
 .css-vnkopk-MuiStepLabel-iconContainer{
   padding-right: 0!important;
@@ -45,10 +45,9 @@ a {
   fill: #000!important;
   font-size: 16px!important;
 }
-
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
-  color: #E1E5E9!important;
-  border: 2px solid #EAEFF3!important;
+  color: #EAEFF3!important;
+  border: 2px solid #E1E5E9!important;
   border-radius: 100%;
   width: 41px!important;
   height: 41px!important;
@@ -57,7 +56,7 @@ a {
   color: #14a800!important;
 }
 .css-z7uhs0-MuiStepConnector-line{
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 @media (min-width: 992px) {
